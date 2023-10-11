@@ -59,6 +59,7 @@ function add5(obj, b) {
 
 console.log(obj1); //10
 add5(obj1, 20);
+console.log(obj1); //10
 var obj2 = add5(obj1,20); //30
 console.log(obj2);
 
