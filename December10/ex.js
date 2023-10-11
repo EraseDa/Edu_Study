@@ -63,3 +63,36 @@ var obj2 = add5(obj1,20); //30
 console.log(obj2);
 
 
+/*일급 함수 : 함수를 값으로 정의할 수 있다. */
+var f1 = function(a) { return a * a; };
+console.log(f1);
+
+var f2 = add;
+console.log(f2);
+
+function f3(f) {
+    return f();
+}
+console.log(f3(function(){return 10;})); //10
+
+/*add maker - 순수함수이자 일급함수*/
+
+function add_maker(a) {
+    return function(b){
+        return a + b;
+    }
+}
+
+var add10 = add_maker(10);
+console.log(add10(20));
+
+var add30 = add_maker(30);
+console.log(add30(20));
+
+function f4(f1,f2,f3) {
+    return f3(f1() + f2());
+}
+
+var rslt = f4(function(){return 10;}, function(){return 20;}, function(a){return a*a});
+console.log(rslt);
+
