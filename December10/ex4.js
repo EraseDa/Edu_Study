@@ -50,3 +50,23 @@ function _get(obj, key){
 var user1 = users[0];
 console.log(user1.name);
 console.log(_get(user1, 'name'));
+
+//3. _reduce 만들기
+function _reduce(list, iter, memo) {
+    if(arguments.length==2) {
+        memo=list[0];
+        list = _rest(list);
+    }
+    _each(list, function(val){
+        memo = iter(memo, val);
+    });
+    return memo;
+}
+
+console.log(_reduce([1,2,3], add, 0));
+
+//4. _rest만들기
+var slice = Array.prototype.slice;
+function _rest(list,num) {
+    return slice.call(list, num || 1);
+}
