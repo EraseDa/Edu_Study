@@ -50,9 +50,14 @@ _go(users,
     console.log
 )
 
+_go(users,
+    _filter(user=>user.age<30),
+    _map(_get('age')),
+    console.log
+)
 
 _go(users,
-    _map(_get('name')),
-    _filter(function(user){ return user.age>=30;}),
+    _filter(user=>user.age<30),
+    _map(user=>user.age),
     console.log
 )
