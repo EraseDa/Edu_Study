@@ -37,6 +37,10 @@ function _get(obj, key){
     return obj==null? undefined : obj[key];
 }
 
+var _get = _curryr(function(obj,key) {
+    return obj == null ? undefined : obj[key];
+});
+
 function _reduce(list, iter, memo) {
     if(arguments.length==2) {
         memo=list[0];
