@@ -61,3 +61,6 @@ function _rest(list,num) {
 let f = _pipe(function(a){return a+10},function(b){return b*10});
 f(10); //200
 
+let f1 = _pipe(a=>a+10,b=>b*10);
+f1(10); //200
+
