@@ -71,13 +71,13 @@ f1(10); //200
  * 
  * _go(arg) : arg는 초기값과 함수들을 가짐 _go(1,f1,f2,f3) 이런느낌. 근데 _go는 인자를 1개밖에 받지 않기 때문에 
  * 가장 처음에 있는 1만 인자로 받음. 그렇기 때문에 나머지 f1,f2,f3를 인식하기 위해서는
- * arguments를 call해와야함. Array.Prototype.slice.call(argumnets,1) 를 하게되면 한개만 앞에서 슬라이스해서 배열로 [f1,f2,f3] 만들어줌. 
+ * arguments를 call해와야함. Array.Prototype.slice.call(argumnets,1) 를 하게되면 한개만 앞에서 슬라이스해서 배열로 let fns = [f1,f2,f3]; 만들어줌. 
  */
 
 function _go(arg){ //
     var fns = _rest(arguments); 
-    return _pipe.apply(null, fns)(arg); //_pipe.call(null,fns)를 넣으면 call은 fns 자체를 인자 하나로 보내지만
-    //_pipe.apply(null,fns)를 넣으면 fns[0], fns[1], 식으로 배열 인덱스로 0번째,1번째 각 각 보냄. 
+    return _pipe.apply(null, fns)(arg); //_pipe.call(null,fns)를 넣으면 call은 fns 자체([f1,f2,f3])를 인자 하나로 보내지만
+    //_pipe.apply(null,fns)를 넣으면 fns[0], fns[1], 식으로 배열 인덱스로 f1, f2, f3 각 각 보냄. 
 
 }
 
