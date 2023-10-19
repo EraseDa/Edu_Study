@@ -58,4 +58,6 @@ function _rest(list,num) {
 위에서 iter는 인자를 누적값과 현재값을 받는 함수!
  */
 
+let f = _pipe(function(a){return a+10},function(b){return b*10});
+f(10); //200
 
